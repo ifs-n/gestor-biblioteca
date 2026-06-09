@@ -5,8 +5,6 @@ os.system("cls")
 
 banderita = True
 
-libros = []
-
 while True:
     print("===== BIBLIOTECA =====\n")
     print("1. Agregar libro")
@@ -22,6 +20,6 @@ while True:
     opcion = int(input("Ingrese una opción:\n"))
 
     if opcion == 1:
-        jaja(libros)
+        jaja()
     elif opcion == 2:
         print(libros)

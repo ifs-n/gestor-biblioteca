@@ -1,5 +1,3 @@
-from main import *
-
 #1. Agregar libros
 def agregar():
     print("Programiayua")
