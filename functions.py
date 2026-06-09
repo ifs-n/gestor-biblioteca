@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 from main import *
 
 #1. Agregar libros
@@ -14,6 +15,9 @@ def agregar():
 #8. Mostrar estadísticas
 =======
 
+=======
+libros = []
+>>>>>>> 887cf516c6a459dca4c99f86cc21b01cde11ce5f
 
 def jaja():
     libro = int(input("Ingrese un numero:"))
