@@ -1,4 +1,4 @@
-
+libros = []
 
 def jaja():
     libro = int(input("Ingrese un numero:"))
