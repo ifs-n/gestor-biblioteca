@@ -1,0 +1,27 @@
+import os
+from functions import *
+
+os.system("cls")
+
+banderita = True
+
+libros = []
+
+while True:
+    print("===== BIBLIOTECA =====\n")
+    print("1. Agregar libro")
+    print("2. Mostrar libros")
+    print("3. Buscar libro")
+    print("4. Prestar libro")
+    print("5. Devolver libro")
+    print("6. Eliminar libro")
+    print("7. Modificar libro")
+    print("8. Mostrar estadísticas")
+    print("9. Salir")
+
+    opcion = int(input("Ingrese una opción:\n"))
+
+    if opcion == 1:
+        jaja(libros)
+    elif opcion == 2:
+        print(libros)
