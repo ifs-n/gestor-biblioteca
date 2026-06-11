@@ -57,13 +57,3 @@ def modificar_libro():
 
 def mostrar_estadisticas():
     print("opcion8")
-
-
-
-
-
-
-
-
-
-
