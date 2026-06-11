@@ -1,6 +1,4 @@
 libros = []
-flag1 = True
-
 
 #1. Agregar libros
 
