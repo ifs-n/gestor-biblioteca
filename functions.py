@@ -1,4 +1,6 @@
 libros = []
+flag1 = True
+
 
 #1. Agregar libros
 
@@ -24,8 +26,16 @@ def agregar_libros():
 #2. Mostrar libros
 
 def mostrar_libros():
-    print("opcion2")
-
+    print("----Libros registrados----")
+    for l in libros:
+        print(f"----Libro---")
+        print(f"Titulo: ")
+        print()
+        print()
+        print()
+        
+        
+        
 #3. Buscar libro
 
 def buscar_libro():
