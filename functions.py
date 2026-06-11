@@ -1,9 +1,27 @@
 libros = []
+flag1 = True
+
 
 #1. Agregar libros
 
 def agregar_libros():
-    print("Programiayua")
+    
+    print("----Ingreso libro----")
+    while flag1:
+        titulo = input("Ingrese titulo libro:\n")
+        if len(libros) > 0:
+            for l in libros:
+                if l["titulo"] == titulo:
+                    print("El nombre ingresado se repite ")
+        else:
+            autor = input("Ingrese autor:")
+            estado = "Disponible"
+            libro = {
+                "nombre":titulo,
+                "autor":autor,
+                "estado":estado
+            }
+            flag1 = False
 
 #2. Mostrar libros
 

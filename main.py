@@ -20,7 +20,7 @@ while True:
     opcion = int(input("Ingrese una opción:\n"))
 
     if opcion == 1:
-        jaja()
+        agregar_libros()
     elif opcion == 2:
         mostrar_libros()
     elif opcion == 3:
