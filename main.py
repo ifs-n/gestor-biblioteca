@@ -22,4 +22,23 @@ while True:
     if opcion == 1:
         jaja()
     elif opcion == 2:
-        print(libros)
+        mostrar_libros()
+    elif opcion == 3:
+        buscar_libro()
+    elif opcion == 4:
+        prestar_libro()
+    elif opcion == 5:
+        devolver_libro()
+    elif opcion == 6:
+        eliminar_libro()
+    elif opcion == 7:
+        modificar_libro()
+    elif opcion == 8:
+        mostrar_estadisticas()
+    elif opcion == 9:
+        banderita = False
+    else:
+        print("Opción Inválida")
+
+
+

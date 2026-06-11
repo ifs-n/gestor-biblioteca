@@ -1,25 +1,51 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-from main import *
+libros = []
 
 #1. Agregar libros
-def agregar():
+
+def agregar_libros():
     print("Programiayua")
 
 #2. Mostrar libros
+
+def mostrar_libros():
+    print("opcion2")
+
 #3. Buscar libro
+
+def buscar_libro():
+    print("opcion3")
+
 #4. Prestar libro
+
+def prestar_libro():
+    print("opcion4")
+
 #5. Devolver libro
+
+def devolver_libro():
+    print("opcion5")
+
 #6. Eliminar libro
+
+def eliminar_libro():
+    print("opcion6")
+
 #7. Modificar libro
+
+def modificar_libro():
+    print("opcion7")
+
 #8. Mostrar estadísticas
-=======
 
-=======
-libros = []
->>>>>>> 887cf516c6a459dca4c99f86cc21b01cde11ce5f
+def mostrar_estadisticas():
+    print("opcion8")
 
-def jaja():
-    libro = int(input("Ingrese un numero:"))
-    libros.append(libro)
->>>>>>> f0c0f99f74a25b566db203d57b78c82285a49c4b
+
+
+
+
+
+
+
+
+
