@@ -26,6 +26,10 @@ def agregar_libros():
 #2. Mostrar libros
 
 def mostrar_libros():
+<<<<<<< HEAD
+=======
+    print ("opcion2")
+>>>>>>> d29c6ec065d7b81c6a7ef4fceb1ea33fb2ff3d6b
 
     print("----Libros registrados----")
     for l in libros:
