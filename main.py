@@ -1,7 +1,7 @@
 import os
 from functions import *
 
-os.system("cls")
+os.system("clear")
 
 banderita = True
 
