@@ -1,4 +1,5 @@
 import os
+import time
 from functions import *
 
 os.system("cls")
@@ -28,9 +29,13 @@ while True:
     elif opcion == 4:
         prestar_libro()
     elif opcion == 5:
+        os.system("cls")
         devolver_libro()
+        time.sleep(2)
     elif opcion == 6:
+        os.system("cls")
         eliminar_libro()
+        time.sleep(2)
     elif opcion == 7:
         modificar_libro()
     elif opcion == 8:

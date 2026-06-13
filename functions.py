@@ -1,4 +1,6 @@
-libros = []
+libros = [{
+    "titulo": "Cien años de soledad", "autor": "Gabriel García Márquez", "estado": "Prestado"
+}]
 flag1 = True
 
 
@@ -17,7 +19,7 @@ def agregar_libros():
             autor = input("Ingrese autor:")
             estado = "Disponible"
             libro = {
-                "nombre":titulo,
+                "titulo":titulo,
                 "autor":autor,
                 "estado":estado
             }
@@ -26,15 +28,10 @@ def agregar_libros():
 #2. Mostrar libros
 
 def mostrar_libros():
-<<<<<<< HEAD
-=======
-    print ("opcion2")
->>>>>>> d29c6ec065d7b81c6a7ef4fceb1ea33fb2ff3d6b
-
     print("----Libros registrados----")
     for l in libros:
         print(f"----Libro---")
-        print(f"Titulo: ")
+        print(f"Titulo: {l["titulo"]}")
         print()
         print()
         print()
@@ -52,13 +49,33 @@ def prestar_libro():
 #5. Devolver libro
 
 def devolver_libro():
-    print("opcion5")
+    devolver = input("Ingrese el título del libro que desea devolver")
+    while len(devolver) < 3:
+        devolver = input("El nombre no puede estar vacío o tener menos de 2 caracteres.\nIngrese nuevamente el titulo:")
+    
+    for l in libros:
+        if l["titulo"] == devolver:
+            if l["estado"] == "Prestado":
+                l["estado"] = "Disponible"
+                print(f"El libro {l["titulo"]} ha sido devuelto")
+            else:
+                print("El libro elegido no estaba prestado.")
+        else:
+            print(f"El libro {devolver} no se encuentra registrado en la biblioteca.")
 
 #6. Eliminar libro
 
 def eliminar_libro():
-    print("opcion6")
-
+    eliminar = input("Ingrese el título del libro que desea eliminar")
+    while len(eliminar) < 3:
+        eliminar = input("El nombre no puede estar vacío o tener menos de 2 caracteres.\nIngrese nuevamente el titulo:")
+    for l in libros:
+        if l["titulo"] == eliminar:
+            libros.remove(l)
+            print(f"El libro {eliminar} ha sido de borrado de la faz de la tierra 💀.")
+        else:
+            print("El libro ingresado no esta registrado en la biblioteca.")
+    
 #7. Modificar libro
 
 def modificar_libro():
