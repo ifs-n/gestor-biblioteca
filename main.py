@@ -3,6 +3,7 @@ import time
 from functions import *
 
 os.system("clear")
+os.system("cls")
 
 banderita = True
 
