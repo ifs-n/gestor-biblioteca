@@ -1,4 +1,6 @@
-libros = []
+libros = [{
+    "titulo": "libro troll", "autor": "el pepe", "estado": False
+}]
 
 
 #funciones extra
@@ -33,8 +35,6 @@ def agregar_libros():
                 while l["titulo"] == titulo:
                     print("El titulo ingresado se repite")
                     titulo = input("Ingrese titulo libro:\n").capitalize()
-                    
-
         
         autor = input("Ingrese autor:\n").title()
         validacion_largo(autor)
@@ -108,21 +108,23 @@ def prestar_libro():
                     disponibilidad(l["estado"])
                     prestado = True
         if prestado == False:
-            print("El tirulo ingresado no se encuentra registrado.")
+            print("El titulo ingresado no se encuentra registrado.")
 
 
 
 #5. Devolver libro
 
 def devolver_libro():
-    devolver = input("Ingrese el título del libro que desea devolver")
-    while len(devolver) < 3:
-        devolver = input("El nombre no puede estar vacío o tener menos de 2 caracteres.\nIngrese nuevamente el titulo:")
+    print("----Devolver libro----")
+    devolver = input("Ingrese el título del libro que desea devolver:\n")
+    validacion_largo(devolver)
+    while validacion_largo(devolver) == False:
+        devolver = input("El título no puede estar vacío o tener menos de 3 caracteres.\nIngrese nuevamente el titulo:")
     
     for l in libros:
         if l["titulo"] == devolver:
-            if l["estado"] == "Prestado":
-                l["estado"] = "Disponible"
+            if l["estado"] == False:
+                l["estado"] = True
                 print(f"El libro {l["titulo"]} ha sido devuelto")
             else:
                 print("El libro elegido no estaba prestado.")
@@ -132,9 +134,11 @@ def devolver_libro():
 #6. Eliminar libro
 
 def eliminar_libro():
+    print("----Eliminar libro----")
     eliminar = input("Ingrese el título del libro que desea eliminar")
-    while len(eliminar) < 3:
-        eliminar = input("El nombre no puede estar vacío o tener menos de 2 caracteres.\nIngrese nuevamente el titulo:")
+    validacion_largo(eliminar)
+    while validacion_largo(eliminar) == False:
+        eliminar = input("El título no puede estar vacío o tener menos de 3 caracteres.\nIngrese nuevamente el titulo:")
     for l in libros:
         if l["titulo"] == eliminar:
             libros.remove(l)
@@ -145,15 +149,49 @@ def eliminar_libro():
 #7. Modificar libro
 
 def modificar_libro():
-    print("opcion7")
+    print("----Modificar libro----")
+    modificar = input("Ingrese el libro que desea modificar: \n")
+    validacion_largo(modificar)
+    while validacion_largo(modificar) == False:
+        modificar = input("El titulo no puede estar vacio.\nIngresa el título nuevamente: \n")
+    for l in libros:
+        if l["titulo"] == modificar:
+            
+            nuevo_titulo = input("Ingrese el nuevo título: \n")
+            validacion_largo(nuevo_titulo)
+            while validacion_largo(nuevo_titulo) == False:
+                nuevo_titulo = input("El título no puede estar vacío o tener menos de 3 caracteres.\nIngrese el titulo otra vez:\n")
+            nuevo_autor = input("Ingrese el nuevo autor:\n")
+            validacion_largo(nuevo_autor)
+            while validacion_largo(nuevo_autor) == False:
+                nuevo_autor = input("El autor no puede estar vacío o tener menos de 3 caracteres.\nIngrese el autor nuevamente:\n")
+            
+            l["titulo"] = nuevo_titulo
+            l["autor"] = nuevo_autor
+
+            print("Libro modificado con éxito.")
+        else:
+            print(f"El libro {modificar} no se encuentra registrado.")
 
 #8. Mostrar estadísticas
 
 def mostrar_estadisticas():
-    print("opcion8")
+    print("----Estadísticas biblioteca----")
+
+    disponibles = 0
+    prestados = 0
+    if len(libros) > 0:
+        for l in libros:
+            if l["estado"] == True:
+                disponibles += 1
+            elif l["estado"] == False:
+                prestados += 1
+    else:
+        print("No hay libros registrados.")
     
-    
-    
+    print(f"Total de libros: {len(libros)}")
+    print(f"Libros disponibles: {disponibles}")
+    print(f"Libros prestados: {prestados}")
     
     
     
