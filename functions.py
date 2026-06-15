@@ -1,5 +1,5 @@
 libros = [{
-    "titulo": "libro troll", "autor": "el pepe", "estado": False
+    "titulo": "Libro troll", "autor": "El Rubius", "estado": True
 }]
 
 
@@ -116,10 +116,10 @@ def prestar_libro():
 
 def devolver_libro():
     print("----Devolver libro----")
-    devolver = input("Ingrese el título del libro que desea devolver:\n")
+    devolver = input("Ingrese el título del libro que desea devolver:\n").capitalize()
     validacion_largo(devolver)
     while validacion_largo(devolver) == False:
-        devolver = input("El título no puede estar vacío o tener menos de 3 caracteres.\nIngrese nuevamente el titulo:")
+        devolver = input("El título no puede estar vacío o tener menos de 3 caracteres.\nIngrese nuevamente el titulo:").capitalize()
     
     for l in libros:
         if l["titulo"] == devolver:
@@ -135,36 +135,38 @@ def devolver_libro():
 
 def eliminar_libro():
     print("----Eliminar libro----")
-    eliminar = input("Ingrese el título del libro que desea eliminar")
+    eliminar = input("Ingrese el título del libro que desea eliminar: \n").capitalize()
     validacion_largo(eliminar)
     while validacion_largo(eliminar) == False:
-        eliminar = input("El título no puede estar vacío o tener menos de 3 caracteres.\nIngrese nuevamente el titulo:")
+        eliminar = input("El título no puede estar vacío o tener menos de 3 caracteres.\nIngrese nuevamente el titulo:").capitalize()
+    eliminado = False
     for l in libros:
         if l["titulo"] == eliminar:
             libros.remove(l)
             print(f"El libro {eliminar} ha sido de borrado de la faz de la tierra 💀.")
-        else:
-            print("El libro ingresado no esta registrado en la biblioteca.")
+            eliminado = True
+    if eliminado == False:
+        print("El libro ingresado no esta registrado en la biblioteca.")
     
 #7. Modificar libro
 
 def modificar_libro():
     print("----Modificar libro----")
-    modificar = input("Ingrese el libro que desea modificar: \n")
+    modificar = input("Ingrese el libro que desea modificar: \n").capitalize()
     validacion_largo(modificar)
     while validacion_largo(modificar) == False:
-        modificar = input("El titulo no puede estar vacio.\nIngresa el título nuevamente: \n")
+        modificar = input("El titulo no puede estar vacio.\nIngresa el título nuevamente: \n").capitalize()
     for l in libros:
         if l["titulo"] == modificar:
             
-            nuevo_titulo = input("Ingrese el nuevo título: \n")
+            nuevo_titulo = input("Ingrese el nuevo título: \n").capitalize()
             validacion_largo(nuevo_titulo)
             while validacion_largo(nuevo_titulo) == False:
-                nuevo_titulo = input("El título no puede estar vacío o tener menos de 3 caracteres.\nIngrese el titulo otra vez:\n")
-            nuevo_autor = input("Ingrese el nuevo autor:\n")
+                nuevo_titulo = input("El título no puede estar vacío o tener menos de 3 caracteres.\nIngrese el titulo otra vez:\n").capitalize()
+            nuevo_autor = input("Ingrese el nuevo autor:\n").capitalize()
             validacion_largo(nuevo_autor)
             while validacion_largo(nuevo_autor) == False:
-                nuevo_autor = input("El autor no puede estar vacío o tener menos de 3 caracteres.\nIngrese el autor nuevamente:\n")
+                nuevo_autor = input("El autor no puede estar vacío o tener menos de 3 caracteres.\nIngrese el autor nuevamente:\n").capitalize()
             
             l["titulo"] = nuevo_titulo
             l["autor"] = nuevo_autor
