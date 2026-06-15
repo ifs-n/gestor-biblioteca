@@ -1,5 +1,5 @@
 libros = [{
-    "titulo": "Libro troll", "autor": "El Rubius", "estado": True
+    "nombre": "EL libro troll", "autor": "El rubius", "estado": True
 }]
 
 
@@ -35,6 +35,7 @@ def agregar_libros():
                 while l["titulo"] == titulo:
                     print("El titulo ingresado se repite")
                     titulo = input("Ingrese titulo libro:\n").capitalize()
+                    
         
         autor = input("Ingrese autor:\n").title()
         validacion_largo(autor)
@@ -194,11 +195,3 @@ def mostrar_estadisticas():
     print(f"Total de libros: {len(libros)}")
     print(f"Libros disponibles: {disponibles}")
     print(f"Libros prestados: {prestados}")
-    
-    
-    
-    
-    
-    
-    
-    
